@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="linux,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="准备工作挂载光盘 12查看已经挂在的光盘df -h  12查看端口占用情况netstat -tlun   方式一，使用虚拟机连接的cd，在光盘设置开启使用iso镜像文件挂载cd到/mnt/cdrom目录下12mkdir /mnt/cdrommound /dev/sr0 /mnt/cdrom    所有rpm包都在/mnt/cdrom/Package/目录下  方法二，将iso包上传到服务器中手动挂">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux软件安装">
+<meta property="og:url" content="http://nbavipstar.com/2019/08/27/Linux软件安装/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="准备工作挂载光盘 12查看已经挂在的光盘df -h  12查看端口占用情况netstat -tlun   方式一，使用虚拟机连接的cd，在光盘设置开启使用iso镜像文件挂载cd到/mnt/cdrom目录下12mkdir /mnt/cdrommound /dev/sr0 /mnt/cdrom    所有rpm包都在/mnt/cdrom/Package/目录下  方法二，将iso包上传到服务器中手动挂">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-06-04T06:17:58.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux软件安装">
+<meta name="twitter:description" content="准备工作挂载光盘 12查看已经挂在的光盘df -h  12查看端口占用情况netstat -tlun   方式一，使用虚拟机连接的cd，在光盘设置开启使用iso镜像文件挂载cd到/mnt/cdrom目录下12mkdir /mnt/cdrommound /dev/sr0 /mnt/cdrom    所有rpm包都在/mnt/cdrom/Package/目录下  方法二，将iso包上传到服务器中手动挂">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://nbavipstar.com/2019/08/27/Linux软件安装/">
+
+
+
+
+
+  <title>Linux软件安装 | 学习笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://nbavipstar.com/2019/08/27/Linux软件安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈湉">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux软件安装</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-27T21:25:10+08:00">
+                2019-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/运维/" itemprop="url" rel="index">
+                    <span itemprop="name">运维</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p><strong>挂载光盘</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看已经挂在的光盘</span><br><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看端口占用情况</span><br><span class="line">netstat -tlun</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方式一，使用虚拟机连接的<code>cd</code>，在光盘设置开启使用<code>iso</code>镜像文件<br>挂载<code>cd</code>到<code>/mnt/cdrom</code>目录下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /mnt/cdrom</span><br><span class="line">mound /dev/sr0 /mnt/cdrom</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>所有<code>rpm</code>包都在<code>/mnt/cdrom/Package/</code>目录下</p>
+<ul>
+<li>方法二，将<code>iso</code>包上传到服务器中手动挂载<br>将<code>CentOS-6.10-x86_64-bin-DVD1.iso</code> <code>CentOS-6.10-x86_64-bin-DVD2.iso</code>上传到<code>/mnt</code>中<br>创建文件夹<code>/mnt/cdrom1</code>、<code>/mnt/cdrom2</code>分别挂载2个<code>iso</code>文件<br>分别执行命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount -o loop -t iso9660 CentOS-6.10-x86_64-bin-DVD1.iso /mnt/cdrom1</span><br><span class="line">mount -o loop -t iso9660 CentOS-6.10-x86_64-bin-DVD2.iso /mnt/cdrom2</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明</strong>安装过的<code>rpm</code>包只用输入包名，没有安装果的<code>rpm</code>包必须输入包全名，下文的安装说明均以安装<code>Apache</code>为例</p>
+<h1 id="RPM-安装软件"><a href="#RPM-安装软件" class="headerlink" title="RPM 安装软件"></a>RPM 安装软件</h1><h2 id="rpm命令"><a href="#rpm命令" class="headerlink" title="rpm命令"></a>rpm命令</h2><p><strong>一、安装命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh httpd-</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-i install</code>安装</li>
+<li><code>-v verbose</code>显示详细信息</li>
+<li><code>-h hash</code>显示进度</li>
+<li><code>--nodeps</code>不检测依赖性</li>
+</ul>
+<p>以安装<code>apache</code>为例子，需要依次安装下列<code>rpm</code>包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">httpd-2.4.6-88.el7.centos.x86_64.rpm</span><br><span class="line">httpd-devel-2.4.6-88.el7.centos.x86_64.rpm</span><br><span class="line">httpd-manual-2.4.6-88.el7.centos.noarch.rpm</span><br><span class="line">httpd-tools-2.4.6-88.el7.centos.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明</strong><br><code>rpm</code>安装软件包的过程中会出现各种依赖报错，找到需要依赖的包或者文件，依次用<code>rpm</code>进行安装即可，若出现依赖包过多繁杂的情况可用<code>yum</code>安装缺失的包即可</p>
+<ul>
+<li>若出现类似报错<code>libdb-devel(x86-64) is needed by apr-util-devel-1.5.2-6.el7.x86_64</code>表示安装当前<code>rpm</code>包缺少该依赖，安装当前所缺依赖即可</li>
+<li>若出现库文件依赖例如：<code>libaprutil-1.so.0()(64bit) is needed by apr-util-devel-1.5.2-6.el7.x86_64</code>则需要去网站(<code>http://rpmfind.net</code>)查询该库文件包含在哪个<code>rpm</code>包中，并安装对应的<code>rpm</code>包</li>
+</ul>
+<p><strong>二、更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh 包全名</span><br></pre></td></tr></table></figure>
+
+<p>如果包全名是没有安装的<code>rpm</code>包，则更新命令和安装命令效果一样</p>
+<p><strong>三、卸载</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e 包名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-e</code> 卸载(erase)</li>
+<li><code>--nodeps</code>不检查依赖性</li>
+</ul>
+<h2 id="rpm查询"><a href="#rpm查询" class="headerlink" title="rpm查询"></a>rpm查询</h2><p>一、查询命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -q</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-q query</code>查询</li>
+<li><code>-qa all</code> all查询所有安装rpm包</li>
+<li><code>-qi infomation</code> 查询软件信息</li>
+<li><code>-qp package</code> 查询未安装包信息</li>
+<li><code>-ql list</code> 列表</li>
+<li><code>-qf file</code> 查询文件所属哪个rpm包</li>
+<li><code>-qR Require</code> 查询rpm包需要依赖哪些包</li>
+</ul>
+<p><strong>小技巧</strong> <code>rpm -q|grep httpd</code></p>
+<h2 id="rpm校验"><a href="#rpm校验" class="headerlink" title="rpm校验"></a>rpm校验</h2><p><strong>一、命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -V</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-V verify</code>验证</li>
+</ul>
+<p><strong>二、核验结果</strong></p>
+<ul>
+<li><p><code>S size</code> 文件大小是否改变</p>
+</li>
+<li><p><code>M mime</code> 文件类型或者文件权限rwx是否改变</p>
+</li>
+<li><p><code>5 mdd5</code> 文件MD5校验是否改变，文件类容是否改变</p>
+</li>
+<li><p><code>D device</code> 设备主从代码是否改变</p>
+</li>
+<li><p><code>L</code> 文件路径是否改变</p>
+</li>
+<li><p><code>U</code> 文件属性(所有者)是否改变</p>
+</li>
+<li><p><code>G group</code> 文件属性组是否改变</p>
+</li>
+<li><p><code>T</code> 文件修改时间是否改变</p>
+</li>
+<li><p><code>c config file</code>配置文件</p>
+</li>
+<li><p><code>d documentation</code>文档</p>
+</li>
+<li><p><code>g ghost file</code>鬼文件，很少见，就是该文件不应该被包含在该rpm包中</p>
+</li>
+<li><p><code>L Licese file</code>授权文件</p>
+</li>
+<li><p><code>r read me</code>描述文件</p>
+</li>
+</ul>
+<h2 id="rpm包中文件提取"><a href="#rpm包中文件提取" class="headerlink" title="rpm包中文件提取"></a>rpm包中文件提取</h2><p><strong>一、命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm2cpio 包全名 | cpio -idv .文件绝对路径</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-rpm2cpio</code>将<code>rpm</code>包转换为<code>cpio</code>格式命令</li>
+<li><code>-cpio</code>是一个标准工具，它用于创建软件档案文件和从档案文件中提取文件</li>
+</ul>
+<h2 id="rpm包默认安装路径"><a href="#rpm包默认安装路径" class="headerlink" title="rpm包默认安装路径"></a>rpm包默认安装路径</h2><ul>
+<li><code>/etc/</code>配置文件安装目录</li>
+<li><code>/usr/bin/</code>可执行命令安装目录</li>
+<li><code>/usr/lib/</code>程序所使用函数库保存位置</li>
+<li><code>/usr/share/doc/</code>基本软件使用手册保存位置</li>
+<li><code>/usr/share/man/</code>帮助文件保存位置</li>
+</ul>
+<h2 id="Apache启动"><a href="#Apache启动" class="headerlink" title="Apache启动"></a>Apache启动</h2><p><code>rpm</code>包安装的服务可以使用系统服务管理命令来管理，例如<code>rpm</code>包安装的<code>apache</code>的启动方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/rc.d/init.d/httpd start(linux标准启动方法)</span><br><span class="line">service httpd start</span><br></pre></td></tr></table></figure>
+
+<h1 id="YUM-安装软件"><a href="#YUM-安装软件" class="headerlink" title="YUM 安装软件"></a>YUM 安装软件</h1><h2 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h2><p><strong>一、搭建本地yum源</strong></p>
+<ol>
+<li>进入到yum源目录编辑<code>cd /etc/yum.repos.d/</code></li>
+<li>重命名默认yunm源文件<code>mv CentOS-Base.repo CentOS-Base.repo.bak</code></li>
+<li>修改目标yum源文件<code>vim /etc/yum.repos.d/CentOS-media.repo</code></li>
+</ol>
+<p>原始内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[c7-media]</span><br><span class="line">name=CentOS-$releasever - Media</span><br><span class="line">baseurl=file:///media/CentOS/</span><br><span class="line">        file:///media/cdrom/</span><br><span class="line">        file:///media/cdrecorder/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
+
+<p>修改后类容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[c7-media]</span><br><span class="line">name=CentOS-$releasever - Media</span><br><span class="line">baseurl=file:///mnt/cdrom/</span><br><span class="line">#        file:///media/cdrom/</span><br><span class="line">#        file:///media/cdrecorder/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
+
+<h2 id="yum命令"><a href="#yum命令" class="headerlink" title="yum命令"></a>yum命令</h2><ul>
+<li>获取可以安装yum软件列表<code>yum list</code></li>
+<li>搜索yum源是否存在某软件<code>yum search 包名</code></li>
+<li>安装软件<code>yum -y install 包名</code>，<code>-y yes</code></li>
+<li>更新软件<code>yum -y update 包名</code></li>
+<li>卸载软件<code>yum -y remove 包名</code></li>
+</ul>
+<h2 id="yum组管理命令"><a href="#yum组管理命令" class="headerlink" title="yum组管理命令"></a>yum组管理命令</h2><ul>
+<li>获取可以安装组列表<code>yum grouplist</code></li>
+<li>安装组<code>yum groupinstall 软件组名(只能是英文)</code></li>
+<li>卸载组<code>yum groupremove 软件组名(只能是英文)</code></li>
+</ul>
+<h1 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h1><p><strong>说明</strong><br>源码包安装的服务不能被服务管理命令管理，因为没有安装到牧人路径中，所有只能用绝对路径进行服务管理，如<br><code>/usr/local/apache2/bin/apachectl start</code></p>
+<h2 id="安装apache-http-archive-apache-org-dist-httpd"><a href="#安装apache-http-archive-apache-org-dist-httpd" class="headerlink" title="安装apache(http://archive.apache.org/dist/httpd/)"></a>安装apache(<a href="http://archive.apache.org/dist/httpd/" target="_blank" rel="noopener">http://archive.apache.org/dist/httpd/</a>)</h2><p>一、下载<br>使用<code>wget http://archive.apache.org/dist/httpd/httpd-2.2.9.tar.gz</code>下载，或者手动下载将安装包上传至服务器<code>/root</code>目录下</p>
+<p>二、解压缩<br><code>tar -zxvf httpd2.2.9.tar.gz</code></p>
+<p>三、指定源码包配置/安装</p>
+<ul>
+<li>定义需要的功能选项</li>
+<li>检测系统环境是否符合安装要求</li>
+<li>把定义好的功能选项和检测系统环境的信息都写入Makefile文件，用于后续的编辑</li>
+</ul>
+<ol>
+<li><code>httpd2.2.9</code>目录中存在<code>configure</code>文件，基本上每个源码包都会有这个文件，<code>./configure --help</code>用于查看当前源码包支持的安装配置项<br><code>./configure</code>命令用于软件配置与检查</li>
+<li><code>httpd2.2.9</code>目录中存在<code>INSTALL</code>文件，基本上每个源码包都会有这个文件<code>vim INSTALL</code>会看到安装指引和启动说明等信息</li>
+<li>分别执行以下三个命令<code>./configure --prefix=/usr/local/apache2</code>、<code>make</code>、<code>make install</code></li>
+</ol>
+<p>四、启动Apache</p>
+<ol>
+<li>停止之前使用<code>rpm</code>方式安装的<code>apache</code>服务<code>service httpd stop</code></li>
+<li>启动使用源码包安装的<code>apache</code>服务  <code>/usr/local/apache2/bin/apachectl start</code></li>
+</ol>
+<p><strong>提示</strong><br>报错这个不要紧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd: Could not reliably determine the server&apos;s fully qualified domain name, using localhost.localdomain for ServerName</span><br></pre></td></tr></table></figure>
+
+<p>五、测试<code>Apache</code>服务是否启动成功</p>
+<ul>
+<li>从本机访问虚拟机<code>http://192.168.2.114/</code></li>
+<li>如果访问不通请检查防火墙是否开启，若开启，关闭防火墙</li>
+<li>查看防火墙状态<code>firewall-cmd --state</code></li>
+<li>停止<code>firewall</code> <code>systemctl stop firewalld.service</code></li>
+</ul>
+<p><strong>注意</strong></p>
+<ol>
+<li><code>make</code>之后如果报错，报错之后可以执行<code>make clean</code>清除编译后的缓存/临时文件文件，清除整个安装过程，就跟没有安装一样</li>
+<li><code>make install</code>之后如果报错，需要执行<code>make clean</code>并且删除<code>--prefix</code>指定的安装目录</li>
+</ol>
+<h1 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h1><h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><ol>
+<li><a href="https://lnmp.org/" target="_blank" rel="noopener">https://lnmp.org/</a></li>
+<li>下载lnmp1.6-full.tar.gz按照文档执行安装命令</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/29/LNMP环境配置/" rel="prev" title="LNMP环境配置">
+                LNMP环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">陈湉</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPM-安装软件"><span class="nav-number">2.</span> <span class="nav-text">RPM 安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm命令"><span class="nav-number">2.1.</span> <span class="nav-text">rpm命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm查询"><span class="nav-number">2.2.</span> <span class="nav-text">rpm查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm校验"><span class="nav-number">2.3.</span> <span class="nav-text">rpm校验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm包中文件提取"><span class="nav-number">2.4.</span> <span class="nav-text">rpm包中文件提取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rpm包默认安装路径"><span class="nav-number">2.5.</span> <span class="nav-text">rpm包默认安装路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache启动"><span class="nav-number">2.6.</span> <span class="nav-text">Apache启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YUM-安装软件"><span class="nav-number">3.</span> <span class="nav-text">YUM 安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-1"><span class="nav-number">3.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum命令"><span class="nav-number">3.2.</span> <span class="nav-text">yum命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum组管理命令"><span class="nav-number">3.3.</span> <span class="nav-text">yum组管理命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码安装"><span class="nav-number">4.</span> <span class="nav-text">源码安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装apache-http-archive-apache-org-dist-httpd"><span class="nav-number">4.1.</span> <span class="nav-text">安装apache(http://archive.apache.org/dist/httpd/)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脚本安装"><span class="nav-number">5.</span> <span class="nav-text">脚本安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网址"><span class="nav-number">5.1.</span> <span class="nav-text">网址</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2021006164号-1</a>
+&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈湉</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
